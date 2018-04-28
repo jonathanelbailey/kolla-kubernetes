@@ -157,7 +157,7 @@ spec:
             name: {{ $elementName }}
         - name: nova-compute-persistent-storage
           hostPath:
-            path: /home/magicadmin/nova/
+            path: /storage/nova/
         - name: lib-modules
           hostPath:
             path: /lib/modules

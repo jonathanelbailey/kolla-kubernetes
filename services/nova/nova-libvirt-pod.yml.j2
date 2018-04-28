@@ -108,7 +108,7 @@ spec:
 {{ lib.common_volumes(indent=8) }}
         - name: nova-compute-persistent-storage
           hostPath:
-            path: /home/magicadmin/nova/
+            path: /storage/nova/
         - name: nova-libvirt-config
           configMap:
             name: nova-libvirt
