@@ -121,7 +121,7 @@ spec:
 {{- include "common_volumes" $env | indent 8 }}
         - name: nova-compute-persistent-storage
           hostPath:
-            path: /var/lib/nova
+            path: /home/magicadmin/nova/
         - name: nova-libvirt-config
           configMap:
             name: {{ $elementName }}
