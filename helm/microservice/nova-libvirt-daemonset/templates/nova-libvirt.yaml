@@ -121,7 +121,7 @@ spec:
 {{- include "common_volumes" $env | indent 8 }}
         - name: nova-compute-persistent-storage
           hostPath:
-            path: /storage/nova/
+            path: /data/nova/
         - name: nova-libvirt-config
           configMap:
             name: {{ $elementName }}

@@ -157,7 +157,7 @@ spec:
             name: {{ $elementName }}
         - name: nova-compute-persistent-storage
           hostPath:
-            path: /storage/nova/
+            path: /data/nova/
         - name: lib-modules
           hostPath:
             path: /lib/modules
