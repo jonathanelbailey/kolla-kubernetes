@@ -24,7 +24,7 @@
 
 # overrides TODO template nova.conf?
 - name: mkdir overrides
-  shell: mkdir /etc/kolla/overrides
+  shell: mkdir -p /etc/kolla/overrides
   become: True
 
 - name: crudini --set /etc/kolla/overrides/nova.conf libvirt virt_type qemu

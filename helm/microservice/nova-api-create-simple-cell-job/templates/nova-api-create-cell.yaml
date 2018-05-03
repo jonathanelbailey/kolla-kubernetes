@@ -44,7 +44,7 @@ spec:
             - sh
             - -ce
             - |
-              mkdir /var/log/kolla/nova;
+              mkdir -pm 755 /var/log/kolla/nova;
               chown -R nova: /var/log/kolla/nova;
               chmod 755 /var/log/kolla/nova;
           volumeMounts:
@@ -113,7 +113,7 @@ spec:
           command: [
               "bash",
               "-ce",
-              "if [ ! -d /etc/nova ]; then mkdir /etc/nova; fi;
+              "if [ ! -d /etc/nova ]; then mkdir -p /etc/nova; fi;
                /bin/cp -aLf {{ $containerConfigDirectory }}/..data/nova.conf /etc/nova/nova.conf;
                nova-manage cell_v2 simple_cell_setup;
               "]
