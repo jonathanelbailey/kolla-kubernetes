@@ -26,8 +26,12 @@ spec:
                  "-xec",
                  "mkdir -p /var/log/kolla/openvswitch;
                   DB=/etc/openvswitch/conf.db;
-                  /usr/bin/ovsdb-tool create $DB;
-                  echo $(date) >> /var/log/kolla/db-create.log;" ],
+                  if [ -e "$DB" ]; then
+                    echo "$DB exists";
+                  else 
+                    /usr/bin/ovsdb-tool create $DB;
+                    echo $(date) >> /var/log/kolla/db-create.log;" ],
+                  fi
              "volumeMounts": [
                 {
                    "name": "openvswitch-db",
