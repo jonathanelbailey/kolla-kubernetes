@@ -69,7 +69,7 @@ spec:
             - |
               mkdir -p /var/log/kolla/openvswitch;
 {{- if $localVals.setup_bridge }}
-              ovs-vsctl --no-wait --db=unix:/var/run/openvswitch/db.sock add-br {{ $extBridgeName }};
+              ovs-vsctl --no-wait --db=unix:/var/run/openvswitch/db.sock add-br {{ $extBridgeName }} --may-exist;
 {{- if $localVals.add_port }}
               EXTERNAL_INTERFACE={{ $extInterfaceName }};
               F=/var/lib/kolla-kubernetes/openvswitch-vswitchd/external_interface;
