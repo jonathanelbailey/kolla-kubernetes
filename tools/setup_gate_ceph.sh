@@ -27,7 +27,7 @@ if [ "x$CONFIG" == "xexternal-ovs" ]; then
     sudo rpm -Uvh https://repos.fedorapeople.org/openstack/openstack-newton/rdo-release-newton-4.noarch.rpm || true
     sudo yum install -y openvswitch
     sudo systemctl start openvswitch
-    sudo ovs-vsctl add-br br-ex --may-exist
+    sudo ovs-vsctl --may-exist add-br br-ex 
 fi
 
 tests/bin/setup_config.sh "$2" "$4" "$BRANCH"
