@@ -29,7 +29,7 @@
     - sh
     - -ce
     - |
-      mkdir -pm 755/var/log/kolla/keystone;
+      mkdir -pm 755 /var/log/kolla/keystone;
       chown -R keystone: /var/log/kolla/keystone;
   volumeMounts:
     - name: kolla-logs

@@ -8,6 +8,8 @@ values.yaml
 **/charts
 helm/**/*.lock
 
+.vscode/*
+
 # Packages
 *.egg*
 *.egg-info
