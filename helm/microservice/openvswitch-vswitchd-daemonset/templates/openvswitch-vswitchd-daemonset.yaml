@@ -74,7 +74,7 @@ spec:
               EXTERNAL_INTERFACE={{ $extInterfaceName }};
               F=/var/lib/kolla-kubernetes/openvswitch-vswitchd/external_interface;
               [ -f $F ] && EXTERNAL_INTERFACE=$(<$F);
-              ovs-vsctl --no-wait --db=unix:/var/run/openvswitch/db.sock add-port {{ $extBridgeName }}  $EXTERNAL_INTERFACE;
+              ovs-vsctl --may-exist --no-wait --db=unix:/var/run/openvswitch/db.sock add-port {{ $extBridgeName }}  $EXTERNAL_INTERFACE;
 {{- end }}
 {{- if $localVals.ext_bridge_up }}
               ip link set {{ $extBridgeName }} up;
